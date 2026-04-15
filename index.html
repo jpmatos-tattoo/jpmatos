@@ -668,45 +668,39 @@
       color: var(--white-dim);
     }
 
-    /* Testimonials — grid foto limpo */
+    /* Testimonials — imagens puras */
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
       margin-bottom: 80px;
     }
 
     .testimonial-card {
       display: flex;
       flex-direction: column;
+      gap: 12px;
     }
 
-    .testimonial-photo {
+    .testimonial-card img {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      background-color: var(--black-card);
-      background-size: cover;
-      background-position: center top;
-    }
-
-    .testimonial-caption {
-      padding: 12px 0 0 0;
-      border-top: 2px solid var(--gold);
+      height: auto;
+      display: block;
     }
 
     .testimonial-name {
       font-family: var(--font-ui);
-      font-size: 0.88rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .testimonial-meta {
       font-family: var(--font-ui);
-      font-size: 0.7rem;
+      font-size: 1.1rem;
       color: var(--white-dim);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
     }
 
     /* Project examples */
@@ -1074,8 +1068,8 @@
       }
 
       .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .projects-grid {
@@ -1396,37 +1390,37 @@
 
       <div class="testimonials-grid">
 
-        <!-- DEPOIMENTO 1 — Warley — images/depoimento de cliente 1 Warley.jpg -->
+        <!-- DEPOIMENTO 1 — Warley -->
         <div class="testimonial-card reveal">
-          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 1 Warley.jpg')"></div>
-          <div class="testimonial-caption">
+          <img src="images/depoimento de cliente 1 Warley.jpg" alt="Depoimento de Warley — One Piece e Kimetsu no Yaiba" loading="lazy" />
+          <div>
             <div class="testimonial-name">Warley</div>
             <div class="testimonial-meta">One Piece · Kimetsu no Yaiba</div>
           </div>
         </div>
 
-        <!-- DEPOIMENTO 2 — Myrella — images/depoimento de cliente 2 Myrella.jpg -->
+        <!-- DEPOIMENTO 2 — Myrella -->
         <div class="testimonial-card reveal reveal-delay-1">
-          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 2 Myrella.jpg')"></div>
-          <div class="testimonial-caption">
+          <img src="images/depoimento de cliente 2 Myrella.jpg" alt="Depoimento de Myrella — Kimetsu no Yaiba" loading="lazy" />
+          <div>
             <div class="testimonial-name">Myrella</div>
             <div class="testimonial-meta">Kimetsu no Yaiba</div>
           </div>
         </div>
 
-        <!-- DEPOIMENTO 3 — Giovanna — images/depoimento de cliente 3 Giovanna.jpg -->
+        <!-- DEPOIMENTO 3 — Giovanna -->
         <div class="testimonial-card reveal reveal-delay-2">
-          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 3 Giovanna.jpg')"></div>
-          <div class="testimonial-caption">
+          <img src="images/depoimento de cliente 3 Giovanna.jpg" alt="Depoimento de Giovanna — Jujutsu Kaisen" loading="lazy" />
+          <div>
             <div class="testimonial-name">Giovanna</div>
             <div class="testimonial-meta">Jujutsu Kaisen</div>
           </div>
         </div>
 
-        <!-- DEPOIMENTO 4 — Gabi — images/depoimento de cliente 4 Gabi.jpg -->
+        <!-- DEPOIMENTO 4 — Gabi -->
         <div class="testimonial-card reveal reveal-delay-3">
-          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 4 Gabi.jpg')"></div>
-          <div class="testimonial-caption">
+          <img src="images/depoimento de cliente 4 Gabi.jpg" alt="Depoimento de Gabi — O Príncipe Cruel" loading="lazy" />
+          <div>
             <div class="testimonial-name">Gabi</div>
             <div class="testimonial-meta">O Príncipe Cruel</div>
           </div>
