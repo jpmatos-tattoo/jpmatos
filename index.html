@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JP Matos — Blackwork Geek & Anime | Belo Horizonte</title>
+  <meta name="description" content="Tatuador especialista em blackwork geek e anime em Belo Horizonte. Projetos exclusivos criados do zero para a sua ideia." />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1489396045903682');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1489396045903682&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black:       #0a0a0a;
+      --black-soft:  #111111;
+      --black-card:  #141414;
+      --black-border:#1e1e1e;
+      --gold:        #F5C518;
+      --gold-dim:    #d4aa00;
+      --white:       #FFFFFF;
+      --white-dim:   #CCCCCC;
+      --font-display:'Bebas Neue', sans-serif;
+      --font-body:   'Inter', sans-serif;
+      --font-ui:     'DM Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ─── UTILITY ─── */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .gold { color: var(--gold); }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+    .reveal-delay-4 { transition-delay: 0.44s; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.4s, padding 0.4s;
+    }
+
+    nav.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--black-border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      padding: 10px 22px;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-dim);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta-full { display: inline; }
+    .nav-cta-short { display: none; }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+
+    /* IMAGEM DE DESTAQUE DO HERO — substitua o background-image abaixo pela URL da imagem real */
+    /* Exemplo: background-image: url('imagens/hero-tattoo.jpg'); */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-color: #0d0d0d;
+      /* background-image: url('SUA-IMAGEM-HERO-AQUI.jpg'); */
+      background-size: cover;
+      background-position: center 30%;
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,10,0.3) 0%,
+        rgba(10,10,10,0.15) 30%,
+        rgba(10,10,10,0.75) 70%,
+        rgba(10,10,10,0.98) 100%
+      );
+    }
+
+    /* Placeholder visual — oculto */
+    .hero-bg-placeholder,
+    .hero-bg-placeholder-text {
+      display: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1.hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: var(--white);
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+
+    h1.hero-headline em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+      font-weight: 300;
+      color: var(--white-dim);
+      max-width: 480px;
+      margin-bottom: 44px;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      padding: 18px 38px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-dim);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(245, 197, 24, 0.4);
+    }
+
+    .btn-primary svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--black);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 17px 36px;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      writing-mode: vertical-rl;
+    }
+
+    .hero-scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 120px 0;
+      border-top: 1px solid var(--black-border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* FOTO DO ARTISTA — arquivo: images/foto do artista.JPG */
+    .about-photo {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      background-color: var(--black-card);
+      background-image: url('images/foto do artista.JPG');
+      background-size: cover;
+      background-position: center top;
+      overflow: hidden;
+    }
+
+    .about-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px dashed var(--black-border);
+    }
+
+    .about-photo-placeholder span {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.12);
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .about-photo::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, var(--black), transparent);
+      z-index: 1;
+    }
+
+    .about-photo-accent {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 60px;
+      height: 60px;
+      border-left: 2px solid var(--gold);
+      border-top: 2px solid var(--gold);
+      z-index: 2;
+    }
+
+    .about-photo-accent-br {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 60px;
+      height: 60px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      z-index: 2;
+    }
+
+    .about-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .about-text p strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 44px;
+      padding-top: 44px;
+      border-top: 1px solid var(--black-border);
+    }
+
+    .about-stat-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--gold);
+    }
+
+    .about-stat-label {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      margin-top: 6px;
+    }
+
+    /* ─── GALLERY ─── */
+    #gallery {
+      padding: 100px 0;
+      border-top: 1px solid var(--black-border);
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      gap: 24px;
+    }
+
+    .gallery-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .gallery-ig-link {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(245, 197, 24, 0.35);
+      padding-bottom: 3px;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .gallery-ig-link:hover {
+      color: var(--white);
+      border-color: rgba(245,245,240,0.35);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    /* GALERIA DE IMAGENS — substitua cada background-image pela URL da imagem real do seu portfólio */
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background-color: var(--black-card);
+      cursor: pointer;
+    }
+
+    /* gallery-item-1 → substitua pela URL da sua 1ª foto de portfólio */
+    /* background-image: url('imagens/galeria-1.jpg'); */
+
+    /* gallery-item-2 → substitua pela URL da sua 2ª foto de portfólio */
+    /* background-image: url('imagens/galeria-2.jpg'); */
+
+    /* gallery-item-3 → substitua pela URL da sua 3ª foto de portfólio */
+    /* background-image: url('imagens/galeria-3.jpg'); */
+
+    /* gallery-item-4 → substitua pela URL da sua 4ª foto de portfólio */
+    /* background-image: url('imagens/galeria-4.jpg'); */
+
+    /* gallery-item-5 → substitua pela URL da sua 5ª foto de portfólio */
+    /* background-image: url('imagens/galeria-5.jpg'); */
+
+    /* gallery-item-6 → substitua pela URL da sua 6ª foto de portfólio */
+    /* background-image: url('imagens/galeria-6.jpg'); */
+
+    /* gallery-item-7 → substitua pela URL da sua 7ª foto de portfólio */
+    /* background-image: url('imagens/galeria-7.jpg'); */
+
+    /* gallery-item-8 → substitua pela URL da sua 8ª foto de portfólio */
+    /* background-image: url('imagens/galeria-8.jpg'); */
+
+    /* gallery-item-9 → substitua pela URL da sua 9ª foto de portfólio */
+    /* background-image: url('imagens/galeria-9.jpg'); */
+
+    .gallery-item-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-item-bg {
+      transform: scale(1.05);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,10,0.55);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-overlay svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    /* Placeholder visual para galeria sem imagens */
+    .gallery-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px dashed var(--black-border);
+    }
+
+    .gallery-placeholder span {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .gallery-placeholder .ph-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: rgba(255,255,255,0.05);
+    }
+
+    /* ─── SOCIAL PROOF ─── */
+    #social-proof {
+      padding: 100px 0;
+      border-top: 1px solid var(--black-border);
+    }
+
+    #social-proof > .container > h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      font-weight: 400;
+      margin-bottom: 64px;
+    }
+
+    /* Testimonials — header */
+    .testimonials-header {
+      margin-bottom: 44px;
+    }
+
+    .testimonials-header h3 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .testimonials-header p {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+    }
+
+    /* Testimonials — grid foto limpo */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 80px;
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-photo {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: var(--black-card);
+      background-size: cover;
+      background-position: center top;
+    }
+
+    .testimonial-caption {
+      padding: 12px 0 0 0;
+      border-top: 2px solid var(--gold);
+    }
+
+    .testimonial-name {
+      font-family: var(--font-ui);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .testimonial-meta {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      color: var(--white-dim);
+      letter-spacing: 0.03em;
+    }
+
+    /* Project examples */
+    .projects-label {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 48px;
+      display: block;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 56px;
+    }
+
+    .project-card {
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(245, 197, 24, 0.25);
+    }
+
+    /* IMAGEM DO PROJETO — substitua o background-image pela foto do projeto real */
+    /* Exemplo: background-image: url('imagens/projeto-1.jpg'); */
+    .project-card-photo {
+      aspect-ratio: 1 / 1;
+      background-color: #111;
+      /* background-image: url('SUA-FOTO-PROJETO-AQUI.jpg'); */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .project-card-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-bottom: 1px dashed var(--black-border);
+    }
+
+    .project-card-photo-placeholder span {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .project-card-body {
+      padding: 24px;
+    }
+
+    .project-field {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--black-border);
+    }
+
+    .project-field:last-child {
+      border-bottom: none;
+    }
+
+    .project-field-key {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+    }
+
+    .project-field-value {
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--white);
+      text-align: right;
+    }
+
+    .project-field-value.gold {
+      color: var(--gold);
+    }
+
+    /* Pricing block */
+    .pricing-block {
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-block::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--gold);
+    }
+
+    .pricing-text {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .pricing-text strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    #how-it-works {
+      padding: 100px 0;
+      border-top: 1px solid var(--black-border);
+    }
+
+    #how-it-works h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-bottom: 64px;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--black-border);
+    }
+
+    .how-step {
+      padding: 48px;
+      border-bottom: 1px solid var(--black-border);
+      position: relative;
+      transition: background 0.3s;
+    }
+
+    .how-step:hover {
+      background: var(--black-card);
+    }
+
+    .how-step:nth-child(odd) {
+      border-right: 1px solid var(--black-border);
+    }
+
+    .how-step:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .how-step-num {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(245, 197, 24, 0.08);
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+
+    .how-step:hover .how-step-num {
+      color: rgba(245, 197, 24, 0.2);
+    }
+
+    .how-step-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .how-step-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.8;
+    }
+
+    /* ─── AGENDAMENTO ─── */
+    #agendamento {
+      background: var(--gold);
+      padding: 80px 0;
+    }
+
+    .agendamento-inner {
+      max-width: 760px;
+    }
+
+    .agendamento-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+
+    .agendamento-text {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--black);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .agendamento-obs {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: rgba(10, 10, 10, 0.55);
+      border-top: 1px solid rgba(10, 10, 10, 0.18);
+      padding-top: 20px;
+      margin-top: 8px;
+    }
+
+    /* ─── CTA FINAL ─── */
+    #cta-final {
+      padding: 120px 0;
+      border-top: 1px solid var(--black-border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-final::before {
+      content: 'JP';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: min(40vw, 320px);
+      line-height: 1;
+      color: rgba(255,255,255,0.02);
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.02em;
+    }
+
+    #cta-final h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    #cta-final p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 48px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    #cta-final .btn-primary {
+      position: relative;
+      font-size: 0.9rem;
+      padding: 20px 48px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--black-border);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      transition: color 0.2s;
+    }
+
+    .footer-ig svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .footer-ig:hover {
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .about-photo {
+        aspect-ratio: 4 / 3;
+        max-width: 480px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .how-step:nth-child(odd) {
+        border-right: none;
+      }
+
+      .how-step:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--black-border);
+      }
+
+      .how-step:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+        padding: 32px 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 14px 0;
+      }
+
+      .nav-cta {
+        font-size: 0.68rem;
+        padding: 9px 14px;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-cta-full { display: none; }
+      .nav-cta-short { display: inline; }
+
+      #hero {
+        padding-top: 72px;
+        padding-bottom: 56px;
+      }
+
+      .hero-scroll-hint {
+        display: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+
+      #about,
+      #gallery,
+      #social-proof,
+      #how-it-works,
+      #cta-final {
+        padding: 72px 0;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+      }
+
+      .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .about-stats {
+        gap: 28px;
+      }
+
+      .how-step {
+        padding: 32px 24px;
+      }
+
+      .how-full-text {
+        padding: 32px 24px;
+      }
+
+      .testimonial-card {
+        padding: 28px 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">JP<span>.</span>MATOS</a>
+        <a href="https://wa.me/5531975839662" target="_blank" rel="noopener" class="nav-cta">
+          <span class="nav-cta-full">Quero fazer meu orçamento</span>
+          <span class="nav-cta-short">Orçamento</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ─── SEÇÃO 1 — HERO ─── -->
+  <section id="hero">
+
+    <!-- IMAGEM DE DESTAQUE DO HERO -->
+    <!-- Para trocar: adicione background-image: url('SUA-IMAGEM.jpg') no seletor .hero-bg no CSS acima -->
+    <div class="hero-bg">
+      <div class="hero-bg-placeholder">
+        <span class="hero-bg-placeholder-text">Substituir por imagem de destaque<br>Recomendado: 1920×1080px ou maior</span>
+      </div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-tag">Blackwork · Geek · Anime — Belo Horizonte</div>
+
+      <h1 class="hero-headline reveal">
+        A tatuagem<br />
+        do seu personagem<br />
+        favorito merece<br />
+        <em>mais do que uma<br />cópia do Pinterest.</em>
+      </h1>
+
+      <p class="hero-sub reveal reveal-delay-1">
+        Trabalhos exclusivos, desenvolvidos especialmente para a sua ideia.
+      </p>
+
+      <div class="hero-actions reveal reveal-delay-2">
+        <a href="https://wa.me/5531975839662" target="_blank" rel="noopener" class="btn-primary">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.7a.75.75 0 00.916.916l5.848-1.471A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.558-5.328-1.524l-.382-.232-3.953.994.994-3.953-.232-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Quero fazer meu orçamento
+        </a>
+        <a href="#about" class="btn-ghost reveal reveal-delay-3">
+          Conheça o trabalho
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">Scroll</div>
+  </section>
+
+
+  <!-- ─── SEÇÃO 2 — APRESENTAÇÃO ─── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- FOTO DO ARTISTA — images/foto do artista.JPG -->
+        <div class="about-photo reveal">
+          <div class="about-photo-accent"></div>
+          <div class="about-photo-accent-br"></div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-label reveal">O artista</span>
+          <h2 class="reveal reveal-delay-1">
+            Traço<br />que<br /><span class="gold">eterniza.</span>
+          </h2>
+          <div class="divider reveal reveal-delay-1"></div>
+          <p class="reveal reveal-delay-2">
+            Opa, eu sou o Jotas, tatuador especialista em blackwork na temática geek com mais de 6 anos de experiência. Atendo na capital Belo Horizonte e trabalho com projetos pensados e idealizados especialmente pra cada ideia!
+          </p>
+          <div class="about-stats reveal reveal-delay-3">
+            <div>
+              <div class="about-stat-number">6+</div>
+              <div class="about-stat-label">Anos de<br />experiência</div>
+            </div>
+            <div>
+              <div class="about-stat-number">100%</div>
+              <div class="about-stat-label">Projetos<br />exclusivos</div>
+            </div>
+            <div>
+              <div class="about-stat-number">1000+</div>
+              <div class="about-stat-label">Clientes atendidos<br />e satisfeitos</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── SEÇÃO 3 — GALERIA ─── -->
+  <section id="gallery">
+    <div class="container">
+
+      <div class="gallery-header">
+        <h2 class="reveal">Alguns projetos que já <span class="gold">foram para a pele</span></h2>
+        <a href="https://www.instagram.com/jpmatos.ttt" target="_blank" rel="noopener" class="gallery-ig-link reveal reveal-delay-1">
+          Ver mais no Instagram →
+        </a>
+      </div>
+
+      <div class="gallery-grid reveal">
+
+        <!-- IMAGEM 1 — images/foto portifolio 1.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 1.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 2 — images/foto portifolio 2.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 2.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 3 — images/foto portifolio 3.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 3.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 4 — images/foto portifolio 4.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 4.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 5 — images/foto portifolio 5.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 5.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 6 — images/foto portifolio 6.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 6.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 7 — images/foto portifolio 7.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 7.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 8 — images/foto portifolio 8.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 8.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- IMAGEM 9 — images/foto portifolio 9.jpg -->
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background-image: url('images/foto portifolio 9.jpg')"></div>
+          <div class="gallery-item-overlay">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── SEÇÃO 4 — PROVA SOCIAL E FILTRO ─── -->
+  <section id="social-proof">
+    <div class="container">
+
+      <!-- BLOCO 1 — DEPOIMENTOS -->
+      <div class="testimonials-header reveal">
+        <h3>O que esperar do seu <span class="gold">novo projeto?</span></h3>
+        <p>Veja o que outros clientes estão dizendo</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <!-- DEPOIMENTO 1 — Warley — images/depoimento de cliente 1 Warley.jpg -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 1 Warley.jpg')"></div>
+          <div class="testimonial-caption">
+            <div class="testimonial-name">Warley</div>
+            <div class="testimonial-meta">One Piece · Kimetsu no Yaiba</div>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO 2 — Myrella — images/depoimento de cliente 2 Myrella.jpg -->
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 2 Myrella.jpg')"></div>
+          <div class="testimonial-caption">
+            <div class="testimonial-name">Myrella</div>
+            <div class="testimonial-meta">Kimetsu no Yaiba</div>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO 3 — Giovanna — images/depoimento de cliente 3 Giovanna.jpg -->
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 3 Giovanna.jpg')"></div>
+          <div class="testimonial-caption">
+            <div class="testimonial-name">Giovanna</div>
+            <div class="testimonial-meta">Jujutsu Kaisen</div>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO 4 — Gabi — images/depoimento de cliente 4 Gabi.jpg -->
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-photo" style="background-image: url('images/depoimento de cliente 4 Gabi.jpg')"></div>
+          <div class="testimonial-caption">
+            <div class="testimonial-name">Gabi</div>
+            <div class="testimonial-meta">O Príncipe Cruel</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BLOCO 2 — EXEMPLOS DE PROJETO -->
+      <p class="projects-label reveal">Média de Valores</p>
+      <div class="projects-grid">
+
+        <!-- PROJETO 1 — Luffy — images/foto de projeto 1.jpg -->
+        <div class="project-card reveal">
+          <div class="project-card-photo" style="background-image: url('images/foto de projeto 1.jpg')"></div>
+          <div class="project-card-body">
+            <div class="project-field">
+              <span class="project-field-key">Personagem</span>
+              <span class="project-field-value">Luffy</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Tamanho</span>
+              <span class="project-field-value">10/12 cm</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Local</span>
+              <span class="project-field-value">Antebraço</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Valor médio</span>
+              <span class="project-field-value gold">R$ 380</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETO 2 — Sukuna — images/foto de projeto 2.jpg -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-card-photo" style="background-image: url('images/foto de projeto 2.jpg')"></div>
+          <div class="project-card-body">
+            <div class="project-field">
+              <span class="project-field-key">Personagem</span>
+              <span class="project-field-value">Sukuna</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Tamanho</span>
+              <span class="project-field-value">18/20 cm</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Local</span>
+              <span class="project-field-value">Antebraço</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Valor médio</span>
+              <span class="project-field-value gold">R$ 780</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETO 3 — Spike — images/foto projeto 3.jpg -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-card-photo" style="background-image: url('images/foto projeto 3.jpg')"></div>
+          <div class="project-card-body">
+            <div class="project-field">
+              <span class="project-field-key">Personagem</span>
+              <span class="project-field-value">Spike</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Tamanho</span>
+              <span class="project-field-value">25/30 cm</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Local</span>
+              <span class="project-field-value">Antebraço</span>
+            </div>
+            <div class="project-field">
+              <span class="project-field-key">Valor médio</span>
+              <span class="project-field-value gold">R$ 1.250</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BLOCO 3 — PREÇO -->
+      <div class="pricing-block reveal">
+        <p class="pricing-text">
+          Projetos a partir de <strong>R$300</strong>.<br />
+          Se você quer algo feito com intenção, o próximo passo é uma conversa.
+        </p>
+        <a href="https://wa.me/5531975839662" target="_blank" rel="noopener" class="btn-primary">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.7a.75.75 0 00.916.916l5.848-1.471A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.558-5.328-1.524l-.382-.232-3.953.994.994-3.953-.232-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Quero fazer meu orçamento
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ─── SEÇÃO 5 — COMO FUNCIONA ─── -->
+  <section id="how-it-works">
+    <div class="container">
+
+      <h2 class="reveal">Como funciona <span class="gold">o seu projeto</span></h2>
+
+      <div class="how-grid">
+        <div class="how-step reveal">
+          <div class="how-step-num">01</div>
+          <div class="how-step-title">A sua ideia</div>
+          <p class="how-step-text">Todo projeto começa com a sua ideia — você vai me falar mais sobre a tattoo, o local que escolheu e o tamanho. A gente vai conversar pra eu entender bem a sua proposta.</p>
+        </div>
+
+        <div class="how-step reveal reveal-delay-1">
+          <div class="how-step-num">02</div>
+          <div class="how-step-title">Desenvolvimento do projeto</div>
+          <p class="how-step-text">A partir daí eu começo o desenvolvimento da arte exclusiva, criada do zero só pra você. Nada copiado, nada genérico.</p>
+        </div>
+
+        <div class="how-step reveal">
+          <div class="how-step-num">03</div>
+          <div class="how-step-title">Revisão e ajustes</div>
+          <p class="how-step-text">Quando tenho uma base pronta, te envio pra avaliação. Você me dá o feedback, a gente ajusta o que precisar — e só finalizamos quando você estiver 100% satisfeito com o design.</p>
+        </div>
+
+        <div class="how-step reveal reveal-delay-1">
+          <div class="how-step-num">04</div>
+          <div class="how-step-title">Tinta na pele</div>
+          <p class="how-step-text">Aí é só mandar pra pele no dia agendado.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ─── SEÇÃO AGENDAMENTO ─── -->
+  <section id="agendamento">
+    <div class="container">
+      <div class="agendamento-inner">
+        <h2 class="agendamento-title reveal">Agendamento<br />e sinal</h2>
+        <p class="agendamento-text reveal reveal-delay-1">
+          Sua sessão é confirmada mediante o pagamento de um sinal no valor de <strong>R$100</strong>. Esse valor é abatido no total — no dia da sessão você paga somente o restante.
+        </p>
+        <p class="agendamento-obs reveal reveal-delay-2">
+          Em caso de cancelamento da sessão, o sinal não é reembolsável.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── SEÇÃO 6 — CTA FINAL ─── -->
+  <section id="cta-final">
+    <div class="container">
+      <span class="section-label reveal">Próximo passo</span>
+      <h2 class="reveal reveal-delay-1">Pronto pra eternizar<br /><span class="gold">sua ideia?</span></h2>
+      <p class="reveal reveal-delay-2">
+        Me conta seu projeto. A conversa é gratuita e sem compromisso.
+      </p>
+      <a href="https://wa.me/5531975839662" target="_blank" rel="noopener" class="btn-primary reveal reveal-delay-3">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.7a.75.75 0 00.916.916l5.848-1.471A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.956 0-3.784-.558-5.328-1.524l-.382-.232-3.953.994.994-3.953-.232-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Quero fazer meu orçamento
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ─── RODAPÉ ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">JP<span>.</span>MATOS</div>
+        <a href="https://www.instagram.com/jpmatos.ttt" target="_blank" rel="noopener" class="footer-ig">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @jpmatos.ttt
+        </a>
+        <p class="footer-copy">© JP Matos Tattoo — Belo Horizonte, MG</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ─── JAVASCRIPT ─── -->
+  <script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Scroll reveal using IntersectionObserver
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
