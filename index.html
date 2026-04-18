@@ -197,10 +197,9 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-color: #0d0d0d;
-      /* background-image: url('SUA-IMAGEM-HERO-AQUI.jpg'); */
+      background-image: url('images/hero-bg.jpg');
       background-size: cover;
-      background-position: center 30%;
+      background-position: center;
       z-index: 0;
     }
 
@@ -208,13 +207,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(10,10,10,0.3) 0%,
-        rgba(10,10,10,0.15) 30%,
-        rgba(10,10,10,0.75) 70%,
-        rgba(10,10,10,0.98) 100%
-      );
+      background: rgba(0, 0, 0, 0.65);
     }
 
     /* Placeholder visual — oculto */
@@ -1266,10 +1259,7 @@
   <!-- ─── SEÇÃO 1 — HERO ─── -->
   <section id="hero">
 
-    <!-- IMAGEM DE DESTAQUE DO HERO -->
-    <!-- Para trocar: adicione background-image: url('SUA-IMAGEM.jpg') no seletor .hero-bg no CSS acima -->
-    <div class="hero-bg">
-    </div>
+    <div class="hero-bg"></div>
 
     <div class="container hero-content">
       <div class="hero-tag">Blackwork · Geek · Anime — Belo Horizonte</div>
