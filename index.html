@@ -194,7 +194,7 @@
 
     /* IMAGEM DE DESTAQUE DO HERO — substitua o background-image abaixo pela URL da imagem real */
     /* Exemplo: background-image: url('imagens/hero-tattoo.jpg'); */
-    .hero-bg {
+    .hero-capa {
       position: absolute;
       inset: 0;
       background-image: url('images/hero-capa.jpg');
@@ -203,7 +203,7 @@
       z-index: 0;
     }
 
-    .hero-bg::after {
+    .hero-capa::after {
       content: '';
       position: absolute;
       inset: 0;
@@ -211,8 +211,8 @@
     }
 
     /* Placeholder visual — oculto */
-    .hero-bg-placeholder,
-    .hero-bg-placeholder-text {
+    .hero-capa-placeholder,
+    .hero-capa-placeholder-text {
       display: none;
     }
 
@@ -1259,7 +1259,7 @@
   <!-- ─── SEÇÃO 1 — HERO ─── -->
   <section id="hero">
 
-    <div class="hero-bg"></div>
+    <div class="hero-capa"></div>
 
     <div class="container hero-content">
       <div class="hero-tag">Blackwork · Geek · Anime — Belo Horizonte</div>
